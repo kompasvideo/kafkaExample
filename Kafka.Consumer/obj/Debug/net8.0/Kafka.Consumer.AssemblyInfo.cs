@@ -10,12 +10,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Kafka.Common")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Kafka.Consumer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+27adf113bd43c4ec8fb9d5e6e33d769dee9d6e86")]
-[assembly: System.Reflection.AssemblyProductAttribute("Kafka.Common")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Kafka.Common")]
+[assembly: System.Reflection.AssemblyProductAttribute("Kafka.Consumer")]
+[assembly: System.Reflection.AssemblyTitleAttribute("Kafka.Consumer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Создано классом WriteCodeFragment MSBuild.
