@@ -8,7 +8,9 @@ using var consumer = new ConsumerBuilder<long, OrderEvent>(
         {
             BootstrapServers = broker,
             GroupId = "user-notification-service-order-events-listener",
-            AutoOffsetReset = AutoOffsetReset.Earliest
+            AutoOffsetReset = AutoOffsetReset.Earliest,
+            EnableAutoCommit = true,
+            EnableAutoOffsetStore = false,
         })
     .SetValueDeserializer(new JsonValueSerializer<OrderEvent>())
     .Build();
@@ -19,4 +21,6 @@ while (consumer.Consume() is { } result)
 {
     var message = result.Message;
     Console.WriteLine($"{result.Partition}:{result.Offset}:{message.Key}:{message.Value}");
+    // await Task.Delay(TimeSpan.FromSeconds(10));
+    // throw new Exception("Анейбл ту консъюм эис мессадж");
 }
