@@ -11,6 +11,7 @@ using var consumer = new ConsumerBuilder<long, OrderEvent>(
             AutoOffsetReset = AutoOffsetReset.Earliest,
             EnableAutoCommit = true,
             EnableAutoOffsetStore = false,
+            MaxPollIntervalMs = 5000,
         })
     .SetValueDeserializer(new JsonValueSerializer<OrderEvent>())
     .Build();
