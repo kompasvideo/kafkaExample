@@ -1,8 +1,11 @@
-﻿using Confluent.Kafka;
+﻿using System.Threading.Channels;
+using Confluent.Kafka;
 using Kafka.Common;
 
 const string broker = "kafka:9092";
 const string topic = "order_events";
+const int channelCapasity = 10;
+
 using var consumer = new ConsumerBuilder<long, OrderEvent>(
         new ConsumerConfig
         {
@@ -11,11 +14,10 @@ using var consumer = new ConsumerBuilder<long, OrderEvent>(
             AutoOffsetReset = AutoOffsetReset.Earliest,
             EnableAutoCommit = true,
             EnableAutoOffsetStore = false,
-            MaxPollIntervalMs = 5000,
+            //MaxPollIntervalMs = 5000,
         })
     .SetValueDeserializer(new JsonValueSerializer<OrderEvent>())
     .Build();
-
 consumer.Subscribe(topic);
 
 while (consumer.Consume() is { } result)

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "uuA3voI83W/+4FeplAG8RLFivr3OvoAlDqFuSDPkUcclWaFal2aiBHY2qG/bLY7AGVysMIEDjIR67C93uiAcXw==",
+  "success": true,
+  "projectFilePath": "C:\\My\\Обучение\\Ozon\\Junior1\\Неделя 6\\Workshop\\Kafka.ConsumerAsync\\Kafka.ConsumerAsync.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\andrey\\.nuget\\packages\\confluent.kafka\\2.5.0\\confluent.kafka.2.5.0.nupkg.sha512",
+    "C:\\Users\\andrey\\.nuget\\packages\\librdkafka.redist\\2.5.0\\librdkafka.redist.2.5.0.nupkg.sha512",
+    "C:\\Users\\andrey\\.nuget\\packages\\system.memory\\4.5.0\\system.memory.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
