@@ -6,7 +6,7 @@ const string broker = "kafka:9092";
 const string topic = "order_events";
 const int channelCapasity = 10;
 
-var channel = Channel.CreateBounded<Message<long, OrderEvent>>(
+var channel = Channel.CreateBounded<ConsumeResult<long, OrderEvent>>(
     new BoundedChannelOptions(channelCapasity)
     {
         SingleWriter = true,
@@ -17,7 +17,7 @@ var consumeTask = Task.Factory.StartNew(() => { }, TaskCreationOptions.LongRunni
 var handleTask = Task.Factory.StartNew(() => { }, TaskCreationOptions.LongRunning);
 await Task.WhenAll(consumeTask, handleTask);
 
-async Task Consume(ChannelWriter<Message<long, OrderEvent>> channelWriter)
+async Task Consume(ChannelWriter<ConsumeResult<long, OrderEvent>> channelWriter)
 {
     using var consumer = new ConsumerBuilder<long, OrderEvent>(
             new ConsumerConfig
@@ -33,5 +33,12 @@ async Task Consume(ChannelWriter<Message<long, OrderEvent>> channelWriter)
         .Build();
 
     consumer.Subscribe(topic);
-    
+    while (await channelWriter.WaitToWriteAsync())
+    {
+        while (consumer.Consume() is { } result)
+        {
+            if (channelWriter.TryWrite(result))
+                await channelWriter.WriteAsync(result);
+        }
+    }
 }
