@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "sMXld6cds4wu2WGM1CxFXm95HSWSQ6NFtxlJDAo/i9PEoGQiOX4DJwyzcARqQNP17tUOuvRcr+WZKX53kl8dXw==",
+  "dgSpecHash": "FE5mQjiqn+YYXlkE6YvJtMO/MP9R8etzluuxNck+GeTXXjidfXl6jac6+WxZOWu9MW23dFw7QMk/L4YSpF0EOw==",
   "success": true,
-  "projectFilePath": "C:\\My\\Обучение\\Ozon\\Junior1\\Неделя 6\\Workshop\\Kafka.Consumer\\Kafka.Consumer.csproj",
+  "projectFilePath": "/Users/andrejbarysnikov/Documents/Ozon/Junior/Неделя 6/kafkaExample/Kafka.Consumer/Kafka.Consumer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\andrey\\.nuget\\packages\\confluent.kafka\\2.5.1\\confluent.kafka.2.5.1.nupkg.sha512",
-    "C:\\Users\\andrey\\.nuget\\packages\\librdkafka.redist\\2.5.0\\librdkafka.redist.2.5.0.nupkg.sha512"
+    "/Users/andrejbarysnikov/.nuget/packages/confluent.kafka/2.5.1/confluent.kafka.2.5.1.nupkg.sha512",
+    "/Users/andrejbarysnikov/.nuget/packages/librdkafka.redist/2.5.0/librdkafka.redist.2.5.0.nupkg.sha512"
   ],
   "logs": []
 }
